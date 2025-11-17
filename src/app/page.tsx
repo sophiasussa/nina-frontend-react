@@ -16,13 +16,17 @@ export default function Home() {
       <main>
         <section className='relative h-[87vh] bg-gradient-to-br from-[#FC9E98] via-[#84D1D0] to-[#FC9E98]'>
           
-          <Image 
-            src={hero} 
-            alt="Parte principal do logo do software para gestão de confeitarias - Nina"
-            className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-all duration-1000'
-            width={500} 
-            priority
-          />
+          <div className='absolute right-24 top-20'>
+            <h3 className='text-white font-light'>Nina é um reflexo da paixão e dedicação das confeiteiras,<br/>
+              um espaço acolhedor que busca ajudar novos profissionais a<br/>
+              gerenciar suas doçuras com amor e eficiência.</h3>
+          </div>
+
+          <div className='absolute left-32 bottom-28'>
+            <h1 className='text-white font-bold text-5xl'>Nina - Gestão Confeitaria</h1>
+            <h2 className='text-white font-semibold text-4xl'>Seu App de Organização de Confeitarias</h2>
+            <button className='bg-white p-2 hover:scale-110 duration-300'>Saiba Mais</button>
+          </div>
 
         </section>
 
