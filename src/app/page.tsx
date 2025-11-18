@@ -15,23 +15,17 @@ export default function Home() {
       </header>
       <main>
         <section className='relative h-[87vh] bg-gradient-to-br from-[#FC9E98] via-[#84D1D0] to-[#FC9E98]'>
-          
-          <div className='absolute right-24 top-20'>
-            <h3 className='text-white font-light'>Nina é um reflexo da paixão e dedicação das confeiteiras,<br/>
-              um espaço acolhedor que busca ajudar novos profissionais a<br/>
+          <div className='absolute top-1/8 w-1/3 right-1/10'>
+            <h3 className='text-white font-light'>Nina é um reflexo da paixão e dedicação das confeiteiras,
+              um espaço acolhedor que busca ajudar novos profissionais a
               gerenciar suas doçuras com amor e eficiência.</h3>
           </div>
 
-          <div className='absolute left-32 bottom-28'>
+          <div className='absolute bottom-1/5 left-1/12'>
             <h1 className='text-white font-bold text-5xl'>Nina - Gestão Confeitaria</h1>
             <h2 className='text-white font-semibold text-4xl'>Seu App de Organização de Confeitarias</h2>
             <button className='bg-white p-2 hover:scale-110 duration-300'>Saiba Mais</button>
           </div>
-
-        </section>
-
-        <section className='bg-gray50'>
-          <h1>Teste</h1>
         </section>
       </main>
       
