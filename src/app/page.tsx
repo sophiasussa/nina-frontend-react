@@ -27,6 +27,27 @@ export default function Home() {
             <button className='bg-white p-2 hover:scale-110 duration-300'>Saiba Mais</button>
           </div>
         </section>
+
+        <section className='bg-gray-50 max-w-6xl mx-auto my-20'>
+          <h3 className='text-2xl text-center font-bold'>Beneficios Principais</h3>
+
+          <p className='text-center mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros<br/> 
+            elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo<br/> 
+            diam libero vitae erat.</p>
+
+          <div className='flex items-center justify-center mt-20 gap-20'>
+            <p>
+              Medium length section heading goes here
+            </p>
+            <p>
+              Medium length section heading goes here
+            </p>
+            <p>
+              Medium length section heading goes here
+            </p>
+          </div>
+        </section>
+
       </main>
       
     </section>  
