@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logo from '../assets/logo.png';
-import hero from '../assets/13.png';
+import software from '../assets/21.jpeg';
 import { Menu, CircleUserRound } from 'lucide-react';
 
 export default function Home() {
@@ -45,6 +45,32 @@ export default function Home() {
             <p>
               Medium length section heading goes here
             </p>
+          </div>
+        </section>
+
+        <section className='max-w-7xl mx-auto gap-20 flex items-center justify-center py-20'>
+          <Image
+            src={software}
+            alt="Imagem do Software gerenciador de confeitaria Nina"
+            width={400}
+            >
+          </Image>
+
+          <div className='grid grid-cols-2 gap-14'>
+            <p>
+              Medium length section heading goes here Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <p>
+              Medium length section heading goes here Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <p>
+              Medium length section heading goes here Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <p>
+              Medium length section heading goes here Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+
+            <button className='text-left'>Testar</button>
           </div>
         </section>
 
