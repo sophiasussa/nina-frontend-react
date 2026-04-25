@@ -2,6 +2,8 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Cake, Users, DollarSign, LayoutDashboard } from "lucide-react";
 import { motion } from "framer-motion";
+import confeitera from "../assets/confeiteira.jpg";
+import logo from "../assets/16.jpeg";
 
 export default function LandingPage() {
   return (
@@ -11,7 +13,7 @@ export default function LandingPage() {
         <h1 className="text-2xl font-bold text-[#84D1D0]">Nina</h1>
         <div className="flex gap-3">
           <Button variant="ghost">Entrar</Button>
-          <Button className="bg-[#FC9E98] hover:bg-[#f88780] text-white">Criar conta</Button>
+          <Button className="bg-[#e2928d] hover:bg-[#df8d87] text-white hover:scale-105 transition-transform duration-300">Criar conta</Button>
         </div>
       </nav>
 
@@ -19,14 +21,14 @@ export default function LandingPage() {
       <section className="bg-gradient-to-tr from-[#84D1D0] to-[#FC9E98]">
         <div className="grid md:grid-cols-2 gap-8 items-center px-6 py-16 max-w-6xl mx-auto">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-900">
               Gerencie sua confeitaria com facilidade
             </h2>
-            <p className="text-white/90 mb-6">
+            <p className="text-gray-700 mb-6">
               Organize pedidos, clientes e finanças em um só lugar. Simples,
               moderno e feito para quem vive da confeitaria.
             </p>
-            <Button className="bg-white text-[#84D1D0] hover:bg-gray-100 px-6 py-3 rounded-2xl shadow-md">
+            <Button className="bg-[#4fd9e3] hover:bg-[#78cbc9] text-[#84D1D0] px-6 py-3 rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
               Começar agora
             </Button>
           </div>
@@ -34,19 +36,24 @@ export default function LandingPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-white/20 backdrop-blur rounded-2xl h-64 flex items-center justify-center"
+            transition={{ duration: 1.2 }}
+            className="relative h-72 md:h-80 w-full rounded-3xl overflow-hidden border border-white/30 shadow-md"
           >
-            <span className="text-white/80">Imagem da confeitaria</span>
+
+            <img
+              src={confeitera}
+              alt="Confeitaria"
+              className="relative z-10 w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+            />
           </motion.div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="px-6 py-16 bg-gray-50">
+      <section className="px-6 py-16 bg-gray-100">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
           {features.map((feature, i) => (
-            <Card key={i} className="rounded-2xl shadow-sm hover:shadow-md transition">
+            <Card key={i} className="rounded-2xl shadow-sm hover:shadow-md hover:scale-110 transition-transform duration-700">
               <CardContent className="p-6 text-center">
                 <feature.icon className="mx-auto mb-4 text-[#84D1D0]" size={32} />
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
@@ -60,7 +67,11 @@ export default function LandingPage() {
       {/* Highlight Section */}
       <section className="grid md:grid-cols-2 gap-8 items-center px-6 py-16 max-w-6xl mx-auto">
         <div className="bg-gray-100 rounded-2xl h-64 flex items-center justify-center">
-          <span className="text-gray-400">Imagem destaque</span>
+            <img
+              src={logo}
+              alt="Confeitaria"
+              className="relative z-10 w-full h-full object-cover hover:scale-110 transition-transform duration-1000"
+            />
         </div>
         <div>
           <h3 className="text-3xl font-bold mb-4">
@@ -74,18 +85,116 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Final */}
-      <section className="bg-[#84D1D0] text-white py-16 text-center px-6">
-        <h3 className="text-3xl font-bold mb-4">
-          Comece a transformar sua confeitaria hoje
-        </h3>
-        <Button className="bg-white text-[#84D1D0] hover:bg-gray-100 px-6 py-3 rounded-2xl shadow">
-          Criar conta grátis
-        </Button>
+      <section className="py-20 px-6 text-center bg-[#FDE7E5]">
+        <div className="max-w-2xl mx-auto">
+          
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Transforme sua confeitaria hoje
+          </h3>
+
+          <p className="text-gray-800/80 mb-8 text-base md:text-lg">
+            Organize pedidos, clientes e finanças de forma simples e prática.
+          </p>
+
+          <Button className="bg-[#FC9E98] hover:bg-[#ee9f9b] text-white px-6 py-3 rounded-xl hover:scale-105 transition">
+            Criar conta grátis
+          </Button>
+
+        </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-6 text-center text-gray-500 text-sm">
-        <p>Nina © {new Date().getFullYear()} - Todos os direitos reservados</p>
+      {/* Seção de confiança */}
+      <section className="py-20 px-6 bg-[#FFF8F7]">
+        <div className="max-w-6xl mx-auto text-center">
+
+          {/* título */}
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Tudo que você precisa para crescer
+          </h3>
+
+          {/* subtítulo */}
+          <p className="text-gray-600 max-w-2xl mx-auto mb-12 text-base md:text-lg">
+            Uma plataforma simples, moderna e pensada para o dia a dia de quem vive da confeitaria.
+          </p>
+
+          {/* cards */}
+          <div className="grid md:grid-cols-3 gap-6 text-left">
+
+            {/* card */}
+            <div className="group p-6 rounded-2xl bg-white border border-gray-100 
+                            shadow-lg hover:shadow-xl hover:-translate-y-1 
+                            transition-all duration-300">
+
+              <div className="mb-4 w-10 h-10 flex items-center justify-center rounded-lg bg-[#FDE7E5] text-[#FC9E98] text-lg">
+                📋
+              </div>
+
+              <h4 className="font-semibold text-gray-800 mb-2 group-hover:text-[#FC9E98] transition">
+                Organização completa
+              </h4>
+
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Controle pedidos, clientes e produção em um único lugar, sem complicação.
+              </p>
+            </div>
+
+            {/* card */}
+            <div className="group p-6 rounded-2xl bg-white border border-gray-100 
+                            shadow-lg hover:shadow-xl hover:-translate-y-1 
+                            transition-all duration-300">
+
+              <div className="mb-4 w-10 h-10 flex items-center justify-center rounded-lg bg-[#E6F7F7] text-[#84D1D0] text-lg">
+                ⚡
+              </div>
+
+              <h4 className="font-semibold text-gray-800 mb-2 group-hover:text-[#84D1D0] transition">
+                Mais produtividade
+              </h4>
+
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Automatize processos e ganhe tempo para focar no que realmente importa.
+              </p>
+            </div>
+
+            {/* card */}
+            <div className="group p-6 rounded-2xl bg-white border border-gray-100 
+                            shadow-lg hover:shadow-xl hover:-translate-y-1 
+                            transition-all duration-300">
+
+              <div className="mb-4 w-10 h-10 flex items-center justify-center rounded-lg bg-[#FDE7E5] text-[#FC9E98] text-lg">
+                ✨
+              </div>
+
+              <h4 className="font-semibold text-gray-800 mb-2 group-hover:text-[#FC9E98] transition">
+                Visual profissional
+              </h4>
+
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Interface bonita e intuitiva que transmite profissionalismo ao seu negócio.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <footer className="bg-gradient-to-tr from-[#FDE7E5] to-[#d4f5f5] py-10 text-sm">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          <p className="text-gray-700">Nina</p>
+
+          <p className="text-gray-700 text-center">
+            © {new Date().getFullYear()} Nina. Todos os direitos reservados.
+          </p>
+
+          <div className="flex gap-4 text-gray-700">
+            <span className="hover:underline cursor-pointer">Privacidade</span>
+            <span className="hover:underline cursor-pointer">Termos</span>
+            <span className="hover:underline cursor-pointer">Contato</span>
+          </div>
+
+        </div>
       </footer>
     </div>
   );
