@@ -2,11 +2,10 @@ import { useState } from "react";
 import { Button } from "../components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    nome: "",
     email: "",
     password: "",
   });
@@ -22,7 +21,7 @@ export default function RegisterPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8000/auth/register", {
+      const response = await fetch("http://localhost:8000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,16 +30,21 @@ export default function RegisterPage() {
       });
 
       if (!response.ok) {
-        throw new Error("Erro ao cadastrar");
+        throw new Error("Erro ao fazer login");
       }
 
       const data = await response.json();
       console.log(data);
 
-      alert("Conta criada com sucesso 🎉");
+      // depois você pode salvar token aqui
+      alert("Login realizado com sucesso 🎉");
+
+      // exemplo: redirecionar
+      // navigate("/dashboard");
+
     } catch (error) {
       console.error(error);
-      alert("Erro ao criar conta");
+      alert("Email ou senha inválidos");
     }
   };
 
@@ -55,25 +59,12 @@ export default function RegisterPage() {
         </h1>
 
         <p className="text-center text-gray-500 mb-6">
-          Crie sua conta e comece a organizar sua confeitaria
+          Acesse sua conta
         </p>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           
-          {/* Nome */}
-          <div>
-            <label className="text-sm text-gray-600">Nome</label>
-            <input
-              type="text"
-              name="nome"
-              value={form.nome}
-              onChange={handleChange}
-              required
-              className="w-full mt-1 px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#84D1D0]"
-            />
-          </div>
-
           {/* Email */}
           <div>
             <label className="text-sm text-gray-600">Email</label>
@@ -103,19 +94,32 @@ export default function RegisterPage() {
           {/* Botão */}
           <Button
             type="submit"
-            className="w-full bg-[#dd837d] hover:bg-[#ee9f9b] text-white py-2 rounded-xl mt-4 hover:scale-105 transition"
+            className="w-full bg-[#84D1D0] hover:bg-[#6bbcbc] text-white py-2 rounded-xl mt-4 hover:scale-105 transition"
           >
-            Criar conta
+            Entrar
           </Button>
         </form>
 
-        {/* Link login */}
-        <p className="text-center text-sm text-gray-500 mt-6">
-          Já tem conta?{" "}
-          <span className="text-[#84D1D0] cursor-pointer hover:underline" onClick={() => navigate("/login")}>
-            Entrar
-          </span>
-        </p>
+        {/* Links */}
+        <div className="text-center text-sm text-gray-500 mt-6 space-y-2">
+          
+          <p>
+            Não tem conta?{" "}
+            <span
+              onClick={() => navigate("/register")}
+              className="text-[#FC9E98] cursor-pointer hover:underline"
+            >
+              Criar conta
+            </span>
+          </p>
+
+          <p
+            onClick={() => navigate("/")}
+            className="cursor-pointer hover:underline"
+          >
+            ← Voltar para início
+          </p>
+        </div>
       </div>
     </div>
   );

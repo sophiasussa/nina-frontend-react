@@ -16,7 +16,7 @@ export default function LandingPage() {
       <nav className="flex items-center justify-between px-10 md:px-20 py-4 shadow-sm">
         <h1 className="text-2xl font-bold text-[#84D1D0]">Nina</h1>
         <div className="flex gap-3">
-          <Button variant="ghost">Entrar</Button>
+          <Button variant="ghost" onClick={() => navigate("/login")}>Entrar</Button>
           <Button className="bg-[#dd837d] hover:bg-[#df8d87] text-white hover:scale-105 transition-transform duration-300" onClick={() => navigate("/register")}>Criar conta</Button>
         </div>
       </nav>
