@@ -3,9 +3,13 @@ import { Card, CardContent } from "../components/ui/card";
 import { Cake, Users, DollarSign, LayoutDashboard } from "lucide-react";
 import { motion } from "framer-motion";
 import confeitera from "../assets/confeiteira.jpg";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/16.jpeg";
 
 export default function LandingPage() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* Navbar */}
@@ -13,7 +17,7 @@ export default function LandingPage() {
         <h1 className="text-2xl font-bold text-[#84D1D0]">Nina</h1>
         <div className="flex gap-3">
           <Button variant="ghost">Entrar</Button>
-          <Button className="bg-[#e2928d] hover:bg-[#df8d87] text-white hover:scale-105 transition-transform duration-300">Criar conta</Button>
+          <Button className="bg-[#dd837d] hover:bg-[#df8d87] text-white hover:scale-105 transition-transform duration-300" onClick={() => navigate("/register")}>Criar conta</Button>
         </div>
       </nav>
 
@@ -28,7 +32,7 @@ export default function LandingPage() {
               Organize pedidos, clientes e finanças em um só lugar. Simples,
               moderno e feito para quem vive da confeitaria.
             </p>
-            <Button className="bg-[#4fd9e3] hover:bg-[#78cbc9] text-[#84D1D0] px-6 py-3 rounded-2xl shadow-md hover:scale-105 transition-transform duration-300">
+            <Button className="bg-[#4fd9e3] hover:bg-[#78cbc9] text-[#84D1D0] px-6 py-3 rounded-2xl shadow-md hover:scale-105 transition-transform duration-300" onClick={() => navigate("/register")}>
               Começar agora
             </Button>
           </div>
@@ -96,7 +100,7 @@ export default function LandingPage() {
             Organize pedidos, clientes e finanças de forma simples e prática.
           </p>
 
-          <Button className="bg-[#FC9E98] hover:bg-[#ee9f9b] text-white px-6 py-3 rounded-xl hover:scale-105 transition">
+          <Button className="bg-[#dd837d] hover:bg-[#df8d87] text-white px-6 py-3 rounded-xl hover:scale-105 transition" onClick={() => navigate("/register")}>
             Criar conta grátis
           </Button>
 
